@@ -114,3 +114,36 @@ std::vector<int> Solution::AnsSearchRange(std::vector<int>& nums, int target) {
     return {-1, -1};
 }
 
+int Solution::MySqrt(int x) {
+    int left = 0;
+    int right = x;
+    int mid = 0;
+    while (left <= right) {
+        mid = left + (right - left) / 2;
+        if ((long long)mid * mid < x) {
+            left = mid + 1;
+        } else if ((long long)mid * mid > x) {
+            right = mid - 1;
+        } else {
+            left = mid + 1;
+        }
+    }
+    return left - 1;
+}
+
+bool Solution::isPerfectSquare(int num) {
+    int left = 0;
+    int right = num;
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+        if ((long long)mid * mid == num) {
+            return true;
+        } else if ((long long)mid * mid < num) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+    return false;
+}
+
