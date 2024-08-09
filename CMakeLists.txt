@@ -3,6 +3,4 @@ project(LeetcodeDemo)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(LeetcodeDemo main.cpp
-        Solution.cpp
-        Solution.h)
+add_executable(components_count components_count.cpp)
